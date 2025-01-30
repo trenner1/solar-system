@@ -52,8 +52,8 @@ jobs:
               with:
                 name: my-artifact-${{ matrix.operating_system }}.xml
                 #name: Mocha-Test-Result
-                path: test-results-${{ matrix.operating_system }}
-                #path: test-results.xml
+                #path: test-results-${{ matrix.operating_system }}
+                path: test-results.xml
 
     code-coverage:
         name: Code Coverage
@@ -85,6 +85,6 @@ jobs:
               with: 
                 name: Code-Coverage-Result-${{ matrix.operating_system }}
                 #name: Code-Coverage-Result
-                path: coverage-${{ matrix.operating_system }}
-                #path: coverage
+                #path: coverage-${{ matrix.operating_system }}
+                path: coverage
                 retention-days: 5
