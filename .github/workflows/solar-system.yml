@@ -48,10 +48,12 @@ jobs:
 
             - name: Archive Test Result
               if: always()
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
-                name: Mocha-Test-Result
-                path: test-results.xml
+                name: my-artifact-${{ matrix.operating_system }}.xml
+                #name: Mocha-Test-Result
+                path: test-results-${{ matrix.operating_system }}
+                #path: test-results.xml
 
     code-coverage:
         name: Code Coverage
@@ -79,8 +81,10 @@ jobs:
               run: npm run coverage
 
             - name: Archive Test Result
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with: 
-                name: Code-Coverage-Result
-                path: coverage
+                name: Code-Coverage-Result-${{ matrix.operating_system }}
+                #name: Code-Coverage-Result
+                path: coverage-${{ matrix.operating_system }}
+                #path: coverage
                 retention-days: 5
